@@ -26,6 +26,7 @@ class LoginController extends Controller
             {
                 if(password_verify($password, $user->password))
                 {
+                   // return redirect('')->with('status', ' you are logged in'); //to send a flash message 
                     echo 'Access Granted';
                 }
                 else
