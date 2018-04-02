@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    //Declaring roles
+    public $roleParent = 'Parent';
+    public $roleTeacher = 'Teacher';
+    public $roleAdmin = 'Admin';
+    public $roleStudent = 'Student';
+    
     //Declares the middleware and calls it
     public function __construct()
     {
-        $this->middleware('Login');
+        $this->middleware('Login');//Name of the middleware as given in kernel.php
     }
     
     //Based on the user input details it validates
@@ -19,7 +25,7 @@ class LoginController extends Controller
         $password = $request->password;
         $role = $request->role;
         
-        if($role == 'Admin')
+        if($role == $this->roleAdmin)
         {
             $user = \DB::table('admin_details')->where('email',$email)->first();
             if(isset($user))
@@ -39,7 +45,7 @@ class LoginController extends Controller
                 echo 'Email does not exist';
             }
         }
-        elseif ($role == 'Teacher')
+        elseif ($role == $this->roleTeacher)
         {
             $user = \DB::table('teacher_details')->where('email',$email)->first();
             if(isset($user))
@@ -58,7 +64,7 @@ class LoginController extends Controller
                 echo 'Email does not exist';
             }
         }
-        elseif ($role == 'Student')
+        elseif ($role == $this->roleStudent)
         {
             $user = \DB::table('student_details')->where('email',$email)->first();
             if(isset($user))
@@ -77,7 +83,7 @@ class LoginController extends Controller
                 echo 'Email does not exist';
             }
         }
-        elseif($role == 'Parent')
+        elseif($role == $this->roleParent)
         {
             $user = \DB::table('parent_details')->where('email',$email)->first();
             if(isset($user))

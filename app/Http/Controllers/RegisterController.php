@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
+    //Declaring roles
+    public $roleParent = 'Parent';
+    public $roleTeacher = 'Teacher';
+    public $roleAdmin = 'Admin';
+    public $roleStudent = 'Student';
+    
     //Declaring which middleware to use and call them 
     public function __construct()
     {
-        $this->middleware('Register');
+        $this->middleware('Register');//Name of the middleware as given in kernel.php
     }
     
     //Based on the role mentioned by the user, this function registers them on their corresponding table
@@ -25,7 +31,7 @@ class RegisterController extends Controller
             $password = password_hash($password, PASSWORD_DEFAULT);
             
             //Email is given as unique. So if already prsent insert query will not run.
-            if($role == 'Admin')
+            if($role == $this->roleAdmin)
             {
                 $email_present = \DB::table('admin_details')->where('email',$email)->first();
                 if($email_present == null)
@@ -38,7 +44,7 @@ class RegisterController extends Controller
                     exit;
                 }
             }
-            elseif ($role == 'Teacher')
+            elseif ($role == $this->roleTeacher)
             {
                 $email_present = \DB::table('teacher_details')->where('email',$email)->first();
                 if($email_present == null)
@@ -51,7 +57,7 @@ class RegisterController extends Controller
                     exit;
                 }
             }
-            elseif ($role == 'Student')
+            elseif ($role == $this->roleStudent)
             {
                 $email_present = \DB::table('student_details')->where('email',$email)->first();
                 if($email_present == null)
@@ -64,7 +70,7 @@ class RegisterController extends Controller
                     exit;
                 }
             }
-            elseif ($role == 'Parent')
+            elseif ($role == $this->roleParent)
             {
                 $email_present = \DB::table('parent_details')->where('email',$email)->first();
                 if($email_present == null)
