@@ -21,7 +21,15 @@ Route::get('register', function () {
     return view('register');
 });
 
+//A3. Navigating to login page
+Route::get('login', function () {
+    return view('login');
+});
+
 
 //B.NAVIGATION TO MIDDLWARES AND CONTROLLERS
 //B1.Navigating to register middleware and controller, post registering
 Route::post('register','RegisterController@register');
+
+//B2.Navigating to login middleware and controller, post logging
+Route::post('login','LoginController@login');
