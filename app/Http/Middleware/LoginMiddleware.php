@@ -23,7 +23,10 @@ class LoginMiddleware
         if($email == null || $password == null || $role == null)
         {
             return back()->withInput();
-        }    
+        }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+            return back()->withInput();
+        }
         return $next($request);
     }
 }
