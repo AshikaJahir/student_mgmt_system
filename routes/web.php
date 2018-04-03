@@ -33,3 +33,15 @@ Route::post('register','RegisterController@register');
 
 //B2.Navigating to login middleware and controller, post logging
 Route::post('login','LoginController@login');
+
+//B3.Navigating to Student middleware and controller for adding the student data
+Route::any('addStudent','StudentController@addStudentData');
+
+//B4.Navigating to Student middleware and controller for updating the student data
+Route::any('updateStudent','StudentController@updateStudentData');
+
+//B5.Navigating to Student middleware and controller for viewing the student data
+Route::any('viewStudent','StudentController@viewStudentData');
+
+//B6.Navigating to Student middleware and controller for deleting the student data
+Route::any('deleteStudent','StudentController@deleteStudentData');
