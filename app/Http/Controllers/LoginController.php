@@ -12,6 +12,12 @@ class LoginController extends Controller
     public $roleAdmin = 'Admin';
     public $roleStudent = 'Student';
     
+    //Declare the variable for storing table name
+    public $tableName;
+    
+    //Declare the variable for storing redirecting page
+    public $redirectPage;
+    
     //Declares the middleware and calls it
     public function __construct()
     {
@@ -25,71 +31,31 @@ class LoginController extends Controller
         $password = $request->password;
         $role = $request->role;
         
+        //Based on the role it selects the table
         if($role == $this->roleAdmin)
         {
-            $user = \DB::table('admin_details')->where('email',$email)->first();
-            if(isset($user))
-            {
-                if(password_verify($password, $user->password))
-                {
-                   // return redirect('')->with('status', ' you are logged in'); //to send a flash message 
-                    echo 'Access Granted';
-                }
-                else
-                {
-                    echo 'Password is incorrect';
-                }
-            }
-            else
-            {
-                echo 'Email does not exist';
-            }
-        }
-        elseif ($role == $this->roleTeacher)
+            $this->tableName = 'admin_details';
+            $this->redirectPage = '';
+        }elseif ($role == $this->roleTeacher)
         {
-            $user = \DB::table('teacher_details')->where('email',$email)->first();
-            if(isset($user))
-            {
-                if(password_verify($password, $user->password))
-                {
-                    echo 'Access Granted';
-                }
-                else
-                {
-                    echo 'Password is incorrect';
-                }
-            }
-            else
-            {
-                echo 'Email does not exist';
-            }
-        }
-        elseif ($role == $this->roleStudent)
+            $this->tableName = 'teacher_details';
+            $this->redirectPage = '';
+        }elseif ($role == $this->roleStudent)
         {
-            $user = \DB::table('student_details')->where('email',$email)->first();
-            if(isset($user))
-            {
-                if(password_verify($password, $user->password))
-                {
-                    echo 'Access Granted';
-                }
-                else
-                {
-                    echo 'Password is incorrect';
-                }
-            }
-            else
-            {
-                echo 'Email does not exist';
-            }
-        }
-        elseif($role == $this->roleParent)
+            $this->tableName = 'Student_details';
+            $this->redirectPage = '';
+        }elseif($role == $this->roleParent)
         {
-            $user = \DB::table('parent_details')->where('email',$email)->first();
+            $this->tableName = 'Parent_details';
+            $this->redirectPage = '';
+        }
+        
+        $user = \DB::table($this->tableName)->where('email',$email)->first();
             if(isset($user))
             {
                 if(password_verify($password, $user->password))
                 {
+                   //return redirect($this->redirectPage)->with('status', ' you are logged in'); //to send a flash message 
                     echo 'Access Granted';
                 }
                 else
@@ -101,6 +67,7 @@ class LoginController extends Controller
             {
                 echo 'Email does not exist';
             }
-        }
+            
+        
     }
 }
