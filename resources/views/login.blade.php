@@ -5,88 +5,73 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>SMS</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    
+    <!-- CSS Files-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}"/>
+   
+    <!-- JS Files-->
+    <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript" ></script>
+    <script src="{{ asset('js/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/jquery.validate.min.js') }}" type="text/javascript"></script>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <form action="login" method="POST">
-            
-            <input type="hidden" name="_token" value="<?php echo csrf_token() ?>" </input>
-            <div> Login Form </div>
-                <div>
-        		<label>Role</label>
-        		<input type="text" name="role" class="form-control"  placeholder=""  >
-    		</div>
-                        
-                
-    		<div>
-        		<label>Email</label>
-        		<input type="email" name="email" class="form-control"  placeholder="" >
-    		</div>
-            
-                <div>
-        		<label>Password</label>
-        		<input type="password" name="password" class="form-control"  placeholder="" >
-    		</div>
-
-
-    		<button type="submit" class="btn btn-primary">Login</button>
-		</form>
+</head>
+    <body>      
+        <form action="login" method="post" id="loginform" name="loginform" class="form-horizontal">
+           <input type="hidden" name="_token" value="<?php echo csrf_token() ?>" </input>
+            <div class="container">
+                <h3>Login </h3>
+                <div class="role" id="role">
+                    <label>Role</label>
+                    <input type="radio" name="role"  value="Admin">Admin
+                    <input type="radio" name="role" value="Student">Student
+                    <input type="radio" name="role"  value="Teacher">Teacher
+                    <input type="radio" name="role"  value="Parent">Parents
+                </div>
+                <div class="email">
+                    <label>Email</label>
+                    <input type="email" name="email" id="email" class="form-control"  placeholder="Email ID" >
+                </div>
+                <div class="password">
+        		      <label>Password</label>
+        		      <input type="password" name="password" id="password" class="form-control"  placeholder="Password" >
+                </div>
+                <div class="button">
+                    <button type="submit" id="login" class="btn btn-primary">Submit</button>
+                </div> 
+            </div>
+        </form>
     </body>
+    
+<script>
+ $(document).ready(function() {
+    $("#loginform").validate({
+        rules: {
+            role :"required",
+             email: {
+                required: true,
+                email: true
+            },
+             password: {
+                required: true,
+                minlength: 6
+            },
+            messages: {
+                role:{
+                    required:"Please select your role",
+                },
+                email:{
+                    required:"Please enter a valid email address",
+                },
+                password: {
+                    required: "Please provide a password",
+                    minlength: "Your password must be at least 6 characters long"
+                },
+            }
+        }
+    });
+ });
+    </script>
 </html>
