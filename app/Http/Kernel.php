@@ -62,5 +62,6 @@ class Kernel extends HttpKernel
         'Register' => \App\Http\Middleware\RegisterMiddleware::class,//for register screen
         'Login' => \App\Http\Middleware\LoginMiddleware::class,//for login screen
         'Student' => \App\Http\Middleware\StudentMiddleware::class,//for students basic info for crud
+        'ForgotPwd' => \App\Http\Middleware\ForgotPwdMiddleware::class,//for forgot password page
     ];
 }
