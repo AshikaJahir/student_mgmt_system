@@ -79,14 +79,13 @@
 
             <div class="content">
                 <div class="title m-b-md">   
-                    Welcome to Student Management System..!!   
-                    
+                    Welcome to Student Management System..!!   <br>
+                    Admin page..!!
                 </div>
                 
                 
                 <div class="links">
-                    <a href="login">Login</a>
-                    <a href="register">Register</a>
+                    
                    <!--<a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
