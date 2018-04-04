@@ -46,5 +46,5 @@ Route::any('viewStudent','StudentController@viewStudentData');
 //B6.Navigating to Student middleware and controller for deleting the student data
 Route::any('deleteStudent','StudentController@deleteStudentData');
 
-//B7.Navigating to ForgotPwd middleware and controller for deleting the student data
+//B7.Navigating to ForgotPwd middleware and controller 
 Route::any('forgotPassword','ForgotPwdController@updatePassword');
