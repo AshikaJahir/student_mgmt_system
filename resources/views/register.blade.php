@@ -21,7 +21,7 @@
     <script src="{{ asset('js/jquery.validate.min.js') }}" type="text/javascript"></script>
  </head>
 <body>
-    <form method="post" action="register" id="registerform" name="registerform" class="form-horizontal">
+    <form method="post" action="register" id="registerform" name="registerform" class="form-horizontal" autocomplete="off">
          <input type="hidden" name="_token" value="<?php echo csrf_token() ?>" </input>
            
         <div class="container">

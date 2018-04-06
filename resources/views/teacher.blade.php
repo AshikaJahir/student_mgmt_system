@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}"/>
+
         <!-- Styles -->
         <style>
             html, body {
@@ -62,10 +62,6 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            .icons{
-                height:30px;
-                width:30px;
-            }
         </style>
     </head>
     <body>
@@ -80,12 +76,12 @@
                     @endauth
                 </div>
             @endif
-            <div class="content">
-                <img src="{{ asset('images/admin.png') }}"/><br>
 
+            <div class="content">
+               <img src="{{ asset('images/teacherimage.jpg') }}" /><br>
                 <div class="title m-b-md">   
-                   Welcome to Student Management System..!!   <br>
-                    Admin page..!!
+                    Welcome to Student Management System..!!   <br>
+                    Teacher page..!!
                 </div>
                 
                 

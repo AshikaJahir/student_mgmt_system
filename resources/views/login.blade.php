@@ -19,7 +19,7 @@
 
 </head>
     <body>      
-        <form action="login" method="post" id="loginform" name="loginform" class="form-horizontal">
+        <form action="login" method="post" id="loginform" name="loginform" class="form-horizontal" autocomplete="off">
            <input type="hidden" name="_token" value="<?php echo csrf_token() ?>" </input>
             <div class="container">
                 <h3>Login </h3>
