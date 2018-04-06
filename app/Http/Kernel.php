@@ -61,7 +61,11 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'Register' => \App\Http\Middleware\RegisterMiddleware::class,//for register screen
         'Login' => \App\Http\Middleware\LoginMiddleware::class,//for login screen
-        'Student' => \App\Http\Middleware\StudentMiddleware::class,//for students basic info for crud
         'ForgotPwd' => \App\Http\Middleware\ForgotPwdMiddleware::class,//for forgot password page
+        'Student' => \App\Http\Middleware\StudentMiddleware::class,//for students basic info for crud
+        'Teacher' => \App\Http\Middleware\TeacherMiddleware::class,//for teacher basic info for crud
+        'Admin' => \App\Http\Middleware\AdminMiddleware::class,//for admin basic info for crud
+        'Parent' => \App\Http\Middleware\ParentMiddleware::class,//for parent basic info for crud
+        
     ];
 }
