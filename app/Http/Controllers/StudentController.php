@@ -12,7 +12,9 @@ class StudentController extends Controller
     public $lastname;
     public $fathername;
     public $class;
-    public $contact;   
+    public $contact;      
+    //Declaring the table to be used
+    public $tableName = 'student_data';
     
     public function __construct()
     {
@@ -34,7 +36,7 @@ class StudentController extends Controller
         $this->contact = '9632563259';  
                
         
-        $this->id = \DB::table('student_data')->insertGetId(['firstname' => $this->firstname , 'lastname'=> $this->lastname ,'fathername' => $this->fathername,
+        $this->id = \DB::table($this->tableName)->insertGetId(['firstname' => $this->firstname , 'lastname'=> $this->lastname ,'fathername' => $this->fathername,
             'class'=>$this->class, 'contact'=>$this->contact]);
         
         echo "The student ". $this->firstname." has been inserted with the id ".$this->id;
@@ -49,17 +51,17 @@ class StudentController extends Controller
         $this->class = $request->class;
         $this->contact = $request->contact; */
         
-        $this->id = 3;
+        $this->id = 2;
         $this->firstname = 'Ashika';
         $this->lastname = 'J';
         $this->fathername = 'Jahir Hussain';
         $this->class = '10';
         $this->contact = '9632563259';
         
-        $id_present = \DB::table('student_data')->where('id',$this->id)->first();
-        if($id_present != null)
+        $id_present = \DB::table($this->tableName)->where('id',$this->id)->exists();
+        if($id_present)
         {
-            \DB::table('student_data')->where('id',$this->id)->update(['firstname' => $this->firstname , 'lastname'=> $this->lastname ,'fathername' => $this->fathername,
+            \DB::table($this->tableName)->where('id',$this->id)->update(['firstname' => $this->firstname , 'lastname'=> $this->lastname ,'fathername' => $this->fathername,
             'class'=>$this->class, 'contact'=>$this->contact]);
         
             echo "The student with id ". $this->id." has been updated successfully";
@@ -73,7 +75,7 @@ class StudentController extends Controller
     
     public function viewStudentData()
     {
-        $studentList = \DB::table('student_data')->select('id','firstname','lastname','fathername','class','contact')->get();
+        $studentList = \DB::table($this->tableName)->select('id','firstname','lastname','fathername','class','contact')->get();
         
         
        if($studentList == '[]')
@@ -94,8 +96,8 @@ class StudentController extends Controller
         
             $this->id = 2;
             
-        $id_present = \DB::table('student_data')->where('id',$this->id)->first();
-        if($id_present != null)
+        $id_present = \DB::table($this->tableName)->where('id',$this->id)->exists();
+        if($id_present)
         {        
             \DB::table('student_data')->where('id', '=', $this->id)->delete();
             echo 'The student with id ' .$this->id. ' has been deleted successfully';
