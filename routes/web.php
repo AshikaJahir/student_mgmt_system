@@ -34,17 +34,46 @@ Route::post('register','RegisterController@register');
 //B2.Navigating to login middleware and controller, post logging
 Route::post('login','LoginController@login');
 
-//B3.Navigating to Student middleware and controller for adding the student data
+//B3.Navigating to ForgotPwd middleware and controller 
+Route::any('forgotPassword','ForgotPwdController@updatePassword');
+
+//For Student Module
+//B4.Navigating to Student middleware and controller for adding 
 Route::any('addStudent','StudentController@addStudentData');
-
-//B4.Navigating to Student middleware and controller for updating the student data
+//B5.Navigating to Student middleware and controller for updating 
 Route::any('updateStudent','StudentController@updateStudentData');
-
-//B5.Navigating to Student middleware and controller for viewing the student data
+//B6.Navigating to Student middleware and controller for viewing 
 Route::any('viewStudent','StudentController@viewStudentData');
-
-//B6.Navigating to Student middleware and controller for deleting the student data
+//B7.Navigating to Student middleware and controller for deleting 
 Route::any('deleteStudent','StudentController@deleteStudentData');
 
-//B7.Navigating to ForgotPwd middleware and controller 
-Route::any('forgotPassword','ForgotPwdController@updatePassword');
+//For Admin Module
+//B8.Navigating to Admin middleware and controller for adding 
+Route::any('addAdmin','AdminController@addAdminData');
+//B9.Navigating to Admin middleware and controller for updating 
+Route::any('updateAdmin','AdminController@updateAdminData');
+//B10.Navigating to Admin middleware and controller for viewing 
+Route::any('viewAdmin','AdminController@viewAdminData');
+//B11.Navigating to Admin middleware and controller for deleting 
+Route::any('deleteAdmin','AdminController@deleteAdminData');
+
+//For Parent Module
+//B12.Navigating to Parent middleware and controller for adding 
+Route::any('addParent','ParentController@addParentData');
+//B13.Navigating to Parent middleware and controller for updating 
+Route::any('updateParent','ParentController@updateParentData');
+//B14.Navigating to Parent middleware and controller for viewing 
+Route::any('viewParent','ParentController@viewParentData');
+//B15.Navigating to Parent middleware and controller for deleting 
+Route::any('deleteParent','ParentController@deleteParentData');
+
+//For Teacher Module
+//B12.Navigating to Teacher middleware and controller for adding 
+Route::any('addTeacher','TeacherController@addTeacherData');
+//B13.Navigating to Teacher middleware and controller for updating 
+Route::any('updateTeacher','TeacherController@updateTeacherData');
+//B14.Navigating to Teacher middleware and controller for viewing 
+Route::any('viewTeacher','TeacherController@viewTeacherData');
+//B15.Navigating to Teacher middleware and controller for deleting 
+Route::any('deleteTeacher','TeacherController@deleteTeacherData');
+
