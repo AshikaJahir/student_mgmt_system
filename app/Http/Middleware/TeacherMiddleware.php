@@ -15,6 +15,16 @@ class TeacherMiddleware
      */
     public function handle($request, Closure $next)
     {
+        $firstname = $request->firstname;
+        $lastname = $request->lastname;
+        $gender = $request->gender;
+        $contact = $request->contact;
+        
+        if($firstname == null || $lastname == null || $gender == null || $contact == null)
+        {
+            return back()->withInput();
+        }
+        
         return $next($request);
     }
 }
