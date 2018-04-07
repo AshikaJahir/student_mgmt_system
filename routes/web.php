@@ -77,3 +77,12 @@ Route::any('viewTeacher','TeacherController@viewTeacherData');
 //B15.Navigating to Teacher middleware and controller for deleting 
 Route::any('deleteTeacher','TeacherController@deleteTeacherData');
 
+//For Transport Sub Module
+//B16.Navigating to Transport data middleware and controller for adding 
+Route::any('addTransport','TransportDataController@addTransportData');
+//B17.Navigating to Transport data middleware and controller for updating 
+Route::any('updateTransport','TransportDataController@updateTransportData');
+//B18.Navigating to Transport data middleware and controller for viewing 
+Route::any('viewTransport','TransportDataController@viewTransportData');
+//B19.Navigating to Transport data middleware and controller for deleting 
+Route::any('deleteTransport','TransportDataController@deleteTransportData');
