@@ -86,3 +86,13 @@ Route::any('updateTransport','TransportDataController@updateTransportData');
 Route::any('viewTransport','TransportDataController@viewTransportData');
 //B19.Navigating to Transport data middleware and controller for deleting 
 Route::any('deleteTransport','TransportDataController@deleteTransportData');
+
+//For Fee Sub Module
+//B20.Navigating to Fee data middleware and controller for adding 
+Route::any('addFee','FeeDataController@addFeeData');
+//B21.Navigating to Fee data middleware and controller for updating 
+Route::any('updateFee','FeeDataController@updateFeeData');
+//B22.Navigating to Fee data middleware and controller for viewing 
+Route::any('viewFee','FeeDataController@viewFeeData');
+//B23.Navigating to Fee data middleware and controller for deleting 
+Route::any('deleteFee','FeeDataController@deleteFeeData');
