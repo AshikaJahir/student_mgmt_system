@@ -29,7 +29,8 @@ class TransportDataController extends Controller
         $this->transportmode = 'AC BUS';
         $this->fee = 1000;
         $this->studentid = 2; 
-               
+         
+        //Checks whether the student exists in the student data table, it inserts only if the data present
         $data_exist = \DB::table($this->tableName)->where('studentid',$this->studentid)->doesntExist();
         $studentExist = \DB::table($this->tableDependent)->where('id',$this->studentid)->exists();
         if($studentExist)
@@ -65,7 +66,7 @@ class TransportDataController extends Controller
         $this->fee = 730;
         $this->studentid = 2;
         
-        
+        //it updates only if the base table and child table id matches
         $id_present = \DB::table($this->tableName)
                 ->where([
                         ['transportid', '=', $this->transportid],
