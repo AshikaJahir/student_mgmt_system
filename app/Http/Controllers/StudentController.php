@@ -15,6 +15,7 @@ class StudentController extends Controller
     public $contact;      
     //Declaring the table to be used
     public $tableName = 'student_data';
+    public $tableDependent = 'student_transport_data';
     
     public function __construct()
     {
@@ -39,6 +40,10 @@ class StudentController extends Controller
         $this->id = \DB::table($this->tableName)->insertGetId(['firstname' => $this->firstname , 'lastname'=> $this->lastname ,'fathername' => $this->fathername,
             'class'=>$this->class, 'contact'=>$this->contact]);
         
+        //to insert in student_transport_data table
+        //$tid=\DB::table($this->tableDependent)->insertGetId(['studentid'=> $this->id]);        
+        //echo 'In transport table a row is created storing student id '.$this->id . 'with its transport id as '.$tid; ;
+        echo '<br>';
         echo "The student ". $this->firstname." has been inserted with the id ".$this->id;
     }
     
@@ -51,7 +56,7 @@ class StudentController extends Controller
         $this->class = $request->class;
         $this->contact = $request->contact; */
         
-        $this->id = 2;
+        $this->id = 3;
         $this->firstname = 'Ashika';
         $this->lastname = 'J';
         $this->fathername = 'Jahir Hussain';
@@ -94,12 +99,12 @@ class StudentController extends Controller
     {
         //$this->id = $request->id;
         
-            $this->id = 2;
+            $this->id = 3;
             
         $id_present = \DB::table($this->tableName)->where('id',$this->id)->exists();
         if($id_present)
         {        
-            \DB::table('student_data')->where('id', '=', $this->id)->delete();
+            \DB::table('$this->tableName')->where('id', '=', $this->id)->delete();
             echo 'The student with id ' .$this->id. ' has been deleted successfully';
         }
         else
