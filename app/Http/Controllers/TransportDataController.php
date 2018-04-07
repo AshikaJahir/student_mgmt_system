@@ -17,7 +17,7 @@ class TransportDataController extends Controller
         
     public function __construct()
     {
-        $this->middleware('TransportData');//Name of the middleware as given in kernel.php
+        //$this->middleware('TransportData');//Name of the middleware as given in kernel.php
     }
     
     public function addTransportData(Request $request)
@@ -29,7 +29,8 @@ class TransportDataController extends Controller
         $this->transportmode = 'AC BUS';
         $this->fee = 1000;
         $this->studentid = 2; 
-               
+        
+        //Checks whether the student exists in the student data table, it inserts only if the data present
         $data_exist = \DB::table($this->tableName)->where('studentid',$this->studentid)->doesntExist();
         $studentExist = \DB::table($this->tableDependent)->where('id',$this->studentid)->exists();
         if($studentExist)
