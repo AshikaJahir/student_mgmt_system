@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'ForgotPwd' => \App\Http\Middleware\ForgotPwdMiddleware::class,//for forgot password page
         'Student' => \App\Http\Middleware\StudentMiddleware::class,//for students basic info for crud
         'TransportData' => \App\Http\Middleware\TransportDataMiddleware::class,//for students transport info for crud
+        'FeeData' => \App\Http\Middleware\FeeDataMiddleware::class,//for students fee info for crud
         'Teacher' => \App\Http\Middleware\TeacherMiddleware::class,//for teacher basic info for crud
         'Admin' => \App\Http\Middleware\AdminMiddleware::class,//for admin basic info for crud
         'Parent' => \App\Http\Middleware\ParentMiddleware::class,//for parent basic info for crud

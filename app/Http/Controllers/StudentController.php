@@ -16,6 +16,7 @@ class StudentController extends Controller
     //Declaring the table to be used
     public $tableName = 'student_data';
     public $tableDependent = 'student_transport_data';
+    public $tableDependent2 = 'student_fee_data';
     
     public function __construct()
     {
@@ -43,6 +44,11 @@ class StudentController extends Controller
         //to insert in student_transport_data table
         //$tid=\DB::table($this->tableDependent)->insertGetId(['studentid'=> $this->id]);        
         //echo 'In transport table a row is created storing student id '.$this->id . 'with its transport id as '.$tid; ;
+        
+        //to insert in student_fee_data table
+       // $fid=\DB::table($this->tableDependent2)->insertGetId(['studentid'=> $this->id]);        
+        //echo 'In fee data table a row is created storing student id '.$this->id . 'with its fee id as '.$fid; ;
+        
         echo '<br>';
         echo "The student ". $this->firstname." has been inserted with the id ".$this->id;
     }
