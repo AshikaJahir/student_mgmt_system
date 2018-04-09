@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Student\Admission;
 
 use Closure;
 
-class TransportDataMiddleware
+class FeeDataMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,11 +15,10 @@ class TransportDataMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $transportmode = $request->transportmode;
-        $fee = $request->fee;
+        $feeterm= $request->feeterm;
         $studentid = $request->studentid;
         
-        if($transportmode == null || $fee == null || $studentid == null)
+        if($feeterm == null || $studentid == null)
         {
             return back()->withInput();
         }
