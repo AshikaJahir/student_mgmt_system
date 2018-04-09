@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Teacher;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class TeacherController extends Controller
     
     public function __construct()
     {
-        //$this->middleware('Teacher');//Name of the middleware as given in kernel.php
+        //  $this->middleware('Teacher');//Name of the middleware as given in kernel.php
     }
     
     public function addTeacherData(Request $request)
