@@ -38,61 +38,69 @@ Route::post('login','LoginController@login');
 Route::any('forgotPassword','ForgotPwdController@updatePassword');
 
 //For Student Module
-//B4.Navigating to Student middleware and controller for adding 
-Route::any('addStudent','StudentController@addStudentData');
-//B5.Navigating to Student middleware and controller for updating 
-Route::any('updateStudent','StudentController@updateStudentData');
-//B6.Navigating to Student middleware and controller for viewing 
-Route::any('viewStudent','StudentController@viewStudentData');
-//B7.Navigating to Student middleware and controller for deleting 
-Route::any('deleteStudent','StudentController@deleteStudentData');
+Route::group(['namespace' => '\Student\Admission'], function(){    
+        //For student Basic info 
+        //B4.Navigating to Student middleware and controller for adding 
+        Route::any('addStudent','StudentController@addStudentData');
+        //B5.Navigating to Student middleware and controller for updating 
+        Route::any('updateStudent','StudentController@updateStudentData');
+        //B6.Navigating to Student middleware and controller for viewing 
+        Route::any('viewStudent','StudentController@viewStudentData');
+        //B7.Navigating to Student middleware and controller for deleting 
+        Route::any('deleteStudent','StudentController@deleteStudentData');
+        
+        //For Transport Sub Module
+        //B16.Navigating to Transport data middleware and controller for adding 
+        Route::any('addTransport','TransportDataController@addTransportData');
+        //B17.Navigating to Transport data middleware and controller for updating 
+        Route::any('updateTransport','TransportDataController@updateTransportData');
+        //B18.Navigating to Transport data middleware and controller for viewing 
+        Route::any('viewTransport','TransportDataController@viewTransportData');
+        //B19.Navigating to Transport data middleware and controller for deleting 
+        Route::any('deleteTransport','TransportDataController@deleteTransportData');
+
+        //For Fee Sub Module
+        //B20.Navigating to Fee data middleware and controller for adding 
+        Route::any('addFee','FeeDataController@addFeeData');
+        //B21.Navigating to Fee data middleware and controller for updating 
+        Route::any('updateFee','FeeDataController@updateFeeData');
+        //B22.Navigating to Fee data middleware and controller for viewing 
+        Route::any('viewFee','FeeDataController@viewFeeData');
+        //B23.Navigating to Fee data middleware and controller for deleting 
+        Route::any('deleteFee','FeeDataController@deleteFeeData');
+    });
 
 //For Admin Module
-//B8.Navigating to Admin middleware and controller for adding 
-Route::any('addAdmin','AdminController@addAdminData');
-//B9.Navigating to Admin middleware and controller for updating 
-Route::any('updateAdmin','AdminController@updateAdminData');
-//B10.Navigating to Admin middleware and controller for viewing 
-Route::any('viewAdmin','AdminController@viewAdminData');
-//B11.Navigating to Admin middleware and controller for deleting 
-Route::any('deleteAdmin','AdminController@deleteAdminData');
+Route::group(['namespace' => '\Admin'], function(){
+        //B8.Navigating to Admin middleware and controller for adding 
+        Route::any('addAdmin','AdminController@addAdminData');
+        //B9.Navigating to Admin middleware and controller for updating 
+        Route::any('updateAdmin','AdminController@updateAdminData');
+        //B10.Navigating to Admin middleware and controller for viewing 
+        Route::any('viewAdmin','AdminController@viewAdminData');
+        //B11.Navigating to Admin middleware and controller for deleting 
+        Route::any('deleteAdmin','AdminController@deleteAdminData');
+});
 
 //For Parent Module
-//B12.Navigating to Parent middleware and controller for adding 
-Route::any('addParent','ParentController@addParentData');
-//B13.Navigating to Parent middleware and controller for updating 
-Route::any('updateParent','ParentController@updateParentData');
-//B14.Navigating to Parent middleware and controller for viewing 
-Route::any('viewParent','ParentController@viewParentData');
-//B15.Navigating to Parent middleware and controller for deleting 
-Route::any('deleteParent','ParentController@deleteParentData');
-
+Route::group(['namespace' => '\Parent'], function(){
+        //B12.Navigating to Parent middleware and controller for adding 
+        Route::any('addParent','ParentController@addParentData');
+        //B13.Navigating to Parent middleware and controller for updating 
+        Route::any('updateParent','ParentController@updateParentData');
+        //B14.Navigating to Parent middleware and controller for viewing 
+        Route::any('viewParent','ParentController@viewParentData');
+        //B15.Navigating to Parent middleware and controller for deleting 
+        Route::any('deleteParent','ParentController@deleteParentData');
+});
 //For Teacher Module
-//B12.Navigating to Teacher middleware and controller for adding 
-Route::any('addTeacher','TeacherController@addTeacherData');
-//B13.Navigating to Teacher middleware and controller for updating 
-Route::any('updateTeacher','TeacherController@updateTeacherData');
-//B14.Navigating to Teacher middleware and controller for viewing 
-Route::any('viewTeacher','TeacherController@viewTeacherData');
-//B15.Navigating to Teacher middleware and controller for deleting 
-Route::any('deleteTeacher','TeacherController@deleteTeacherData');
-
-//For Transport Sub Module
-//B16.Navigating to Transport data middleware and controller for adding 
-Route::any('addTransport','TransportDataController@addTransportData');
-//B17.Navigating to Transport data middleware and controller for updating 
-Route::any('updateTransport','TransportDataController@updateTransportData');
-//B18.Navigating to Transport data middleware and controller for viewing 
-Route::any('viewTransport','TransportDataController@viewTransportData');
-//B19.Navigating to Transport data middleware and controller for deleting 
-Route::any('deleteTransport','TransportDataController@deleteTransportData');
-
-//For Fee Sub Module
-//B20.Navigating to Fee data middleware and controller for adding 
-Route::any('addFee','FeeDataController@addFeeData');
-//B21.Navigating to Fee data middleware and controller for updating 
-Route::any('updateFee','FeeDataController@updateFeeData');
-//B22.Navigating to Fee data middleware and controller for viewing 
-Route::any('viewFee','FeeDataController@viewFeeData');
-//B23.Navigating to Fee data middleware and controller for deleting 
-Route::any('deleteFee','FeeDataController@deleteFeeData');
+Route::group(['namespace' => '\Teacher'], function(){
+        //B12.Navigating to Teacher middleware and controller for adding 
+        Route::any('addTeacher','TeacherController@addTeacherData');
+        //B13.Navigating to Teacher middleware and controller for updating 
+        Route::any('updateTeacher','TeacherController@updateTeacherData');
+        //B14.Navigating to Teacher middleware and controller for viewing 
+        Route::any('viewTeacher','TeacherController@viewTeacherData');
+        //B15.Navigating to Teacher middleware and controller for deleting 
+        Route::any('deleteTeacher','TeacherController@deleteTeacherData');
+});
