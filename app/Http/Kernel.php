@@ -62,12 +62,12 @@ class Kernel extends HttpKernel
         'Register' => \App\Http\Middleware\RegisterMiddleware::class,//for register screen
         'Login' => \App\Http\Middleware\LoginMiddleware::class,//for login screen
         'ForgotPwd' => \App\Http\Middleware\ForgotPwdMiddleware::class,//for forgot password page
-        'Student' => \App\Http\Middleware\StudentMiddleware::class,//for students basic info for crud
-        'TransportData' => \App\Http\Middleware\TransportDataMiddleware::class,//for students transport info for crud
-        'FeeData' => \App\Http\Middleware\FeeDataMiddleware::class,//for students fee info for crud
-        'Teacher' => \App\Http\Middleware\TeacherMiddleware::class,//for teacher basic info for crud
-        'Admin' => \App\Http\Middleware\AdminMiddleware::class,//for admin basic info for crud
-        'Parent' => \App\Http\Middleware\ParentMiddleware::class,//for parent basic info for crud
+        'Student' => \App\Http\Middleware\Student\Admission\StudentMiddleware::class,//for students basic info for crud
+        'TransportData' => \App\Http\Middleware\Student\Admission\TransportDataMiddleware::class,//for students transport info for crud
+        'FeeData' => \App\Http\Middleware\Student\Admission\FeeDataMiddleware::class,//for students fee info for crud
+        'Teacher' => \App\Http\Middleware\Teacher\TeacherMiddleware::class,//for teacher basic info for crud
+        'Admin' => \App\Http\Middleware\Admin\AdminMiddleware::class,//for admin basic info for crud
+        'Parent' => \App\Http\Middleware\Parent\ParentMiddleware::class,//for parent basic info for crud
         
     ];
 }
