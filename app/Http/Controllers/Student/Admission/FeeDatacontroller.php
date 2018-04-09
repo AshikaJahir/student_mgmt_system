@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Student\Admission;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class FeeDatacontroller extends Controller
         
     public function __construct()
     {
-        //  $this->middleware('FeeData');//Name of the middleware as given in kernel.php
+        // $this->middleware('FeeData');//Name of the middleware as given in kernel.php
     }
     
     public function addFeeData(Request $request)

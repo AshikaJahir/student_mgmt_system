@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Student\Admission;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class TransportDataController extends Controller
         
     public function __construct()
     {
-        $this->middleware('TransportData');//Name of the middleware as given in kernel.php
+        //$this->middleware('TransportData');//Name of the middleware as given in kernel.php
     }
     
     public function addTransportData(Request $request)
