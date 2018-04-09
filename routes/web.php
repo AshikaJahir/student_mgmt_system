@@ -38,7 +38,10 @@ Route::post('login','LoginController@login');
 Route::any('forgotPassword','ForgotPwdController@updatePassword');
 
 //For Student Module
-Route::group(['namespace' => '\Student\Admission'], function(){    
+Route::group(['namespace' => '\Student'], function(){
+    
+    //For Admission Sub module
+    Route::group(['namespace' => '\Admission'], function(){    
         //For student Basic info 
         //B4.Navigating to Student middleware and controller for adding 
         Route::any('addStudent','StudentController@addStudentData');
@@ -69,7 +72,22 @@ Route::group(['namespace' => '\Student\Admission'], function(){
         //B23.Navigating to Fee data middleware and controller for deleting 
         Route::any('deleteFee','FeeDataController@deleteFeeData');
     });
-
+    
+    //For Class Sub module
+    Route::group(['namespace' => '\ClassData'], function(){    
+        //For student Class info 
+        //B24.Navigating to Student Class middleware and controller for adding 
+        Route::any('addClassData','ClassDetailController@addClassData');
+        //B25.Navigating to Student Class middleware and controller for updating 
+        Route::any('updateClassData','ClassDetailController@updateClassData');
+        //B26.Navigating to Student Class middleware and controller for viewing 
+        Route::any('viewClassData','ClassDetailController@viewClassData');
+        //B27.Navigating to Student Class middleware and controller for deleting 
+        Route::any('deleteClassData','ClassDetailController@deleteClassData');
+     });
+     
+ });
+     
 //For Admin Module
 Route::group(['namespace' => '\Admin'], function(){
         //B8.Navigating to Admin middleware and controller for adding 
