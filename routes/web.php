@@ -126,4 +126,17 @@ Route::group(['namespace' => '\Teacher'], function(){
         Route::any('deleteTeacher','TeacherController@deleteTeacherData');
     });
     
+    //For Class Details Sub module
+    Route::group(['namespace' => '\ClassDetails'], function(){    
+        //For student Class info 
+        //B28.Navigating to  Class middleware and controller for adding 
+        Route::any('addClass','ClassDetailController@addClassData');
+        //B29.Navigating to  Class middleware and controller for updating 
+        Route::any('updateClass','ClassDetailController@updateClassData');
+        //B30.Navigating to  Class middleware and controller for viewing 
+        Route::any('viewClass','ClassDetailController@viewClassData');
+        //B31.Navigating to  Class middleware and controller for deleting 
+        Route::any('deleteClass','ClassDetailController@deleteClassData');
+     });
+    
 });
