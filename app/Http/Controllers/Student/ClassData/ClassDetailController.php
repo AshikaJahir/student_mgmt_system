@@ -81,7 +81,7 @@ class ClassDetailController extends Controller
         
         if($rollno_present)
         {
-            \DB::table($this->tableName)->where('rollno',$this->rollno)->update(['std'=>$this->rollno, 'classteacher'=>$this->classTeacher,
+            \DB::table($this->tableName)->where('rollno',$this->rollno)->update(['std'=>$this->std, 'classteacher'=>$this->classTeacher,
                                     'noofsubjects'=>$this->noOfSubjects,'studentid'=>$this->studentid]);
         
             echo "The class data with rollno ". $this->rollno." has been updated successfully";
