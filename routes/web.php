@@ -113,6 +113,9 @@ Route::group(['namespace' => '\Parent'], function(){
 });
 //For Teacher Module
 Route::group(['namespace' => '\Teacher'], function(){
+    
+    //For Recruitment sub module
+    Route::group(['namespace' => '\Recruitment'], function(){
         //B12.Navigating to Teacher middleware and controller for adding 
         Route::any('addTeacher','TeacherController@addTeacherData');
         //B13.Navigating to Teacher middleware and controller for updating 
@@ -121,4 +124,6 @@ Route::group(['namespace' => '\Teacher'], function(){
         Route::any('viewTeacher','TeacherController@viewTeacherData');
         //B15.Navigating to Teacher middleware and controller for deleting 
         Route::any('deleteTeacher','TeacherController@deleteTeacherData');
+    });
+    
 });

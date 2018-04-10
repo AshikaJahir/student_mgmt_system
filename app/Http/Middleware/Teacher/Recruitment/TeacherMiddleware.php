@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware\Teacher;
+namespace App\Http\Middleware\Teacher\Recruitment;
 
 use Closure;
 
