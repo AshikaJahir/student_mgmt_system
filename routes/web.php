@@ -30,7 +30,6 @@ Route::get('login', function () {
 //B.NAVIGATION TO MIDDLWARES AND CONTROLLERS
 //B1.Navigating to register middleware and controller, post registering
 Route::post('register','RegisterController@register');
-
 //B2.Navigating to login middleware and controller, post logging
 Route::post('login','LoginController@login');
 
@@ -148,6 +147,19 @@ Route::group(['namespace' => '\Teacher'], function(){
         //B31.Navigating to  Class middleware and controller for deleting 
         Route::any('deleteSubject','SubjectDetailController@deleteSubjectData');        
         
+     });
+     
+     //For PTA Sub module
+     Route::group(['namespace' => '\PTA'], function(){    
+        //For PTA Meeting info 
+        //B32.Navigating to PTA Meeting middleware and controller for adding 
+        Route::any('addPTAMeeting','PTAMeetingController@addPTAData');
+        //B33.Navigating to PTA Meeting middleware and controller for updating 
+        Route::any('updatePTAMeeting','PTAMeetingController@updatePTAData');
+        //B34.Navigating to PTA Meeting middleware and controller for viewing 
+        Route::any('viewPTAMeeting','PTAMeetingController@viewPTAData');
+        //B35.Navigating to  PTA Meeting middleware and controller for deleting 
+        Route::any('deletePTAMeeting','PTAMeetingController@deletePTAData');
      });
     
 });
