@@ -68,6 +68,7 @@ class Kernel extends HttpKernel
         'ClassDetail' => \App\Http\Middleware\Student\ClassData\ClassDetailMiddleware::class,//for students class info for crud
         'Teacher' => \App\Http\Middleware\Teacher\Recruitment\TeacherMiddleware::class,//for teacher basic info for crud
         'TeacherClassDetail' => \App\Http\Middleware\Teacher\ClassDetails\ClassDetailMiddleware::class,//for teacher class info for crud
+        'PTAMeeting' => \App\Http\Middleware\Teacher\PTA\PTAMeetingMiddleware::class,//for pta meeting info for crud
         'SubjectDetail' => \App\Http\Middleware\Teacher\ClassDetails\SubjectDetailMiddleware::class,//for teacher class info for crud
         'Admin' => \App\Http\Middleware\Admin\AdminMiddleware::class,//for admin basic info for crud
         'Parent' => \App\Http\Middleware\Parent\ParentMiddleware::class,//for parent basic info for crud
