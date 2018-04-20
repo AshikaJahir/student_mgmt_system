@@ -13,7 +13,14 @@
 //A.NAVIGATION TO VIEWS 
 //A1. Page to be displayed when the user enters the application
 Route::get('/', function () {
+    return view('index');
+});
+
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+Route::get('email', function () {
+    return view('adminator.email');
 });
 
 //A2. Navigating to register page
