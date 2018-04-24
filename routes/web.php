@@ -170,3 +170,42 @@ Route::group(['namespace' => '\Teacher'], function(){
      });
     
 });
+
+
+//After the modification of db
+//For course_details
+Route::resource('coursedetails', 'CourseDetailsController');
+Route::post('create','CourseDetailsController@store');
+Route::put('{id}/edit','CourseDetailsController@update');
+Route::DELETE('{id}/delete','CourseDetailsController@destroy');
+
+//For student_details
+Route::resource('studentdetails', 'StudentDetailsController');
+Route::post('create','StudentDetailsController@store');
+Route::put('{id}/edit','StudentDetailsController@update');
+Route::DELETE('{id}/delete','StudentDetailsController@destroy');
+
+//For student_attendance
+Route::resource('studentattendance', 'StudentAttendanceController');
+Route::post('create','StudentAttendanceController@store');
+Route::put('{id}/edit','StudentAttendanceController@update');
+Route::DELETE('{id}/delete','StudentAttendanceController@destroy');
+
+//For student_subject_paper_mapping
+Route::resource('studentsubjectpaper', 'StudentSubjectPaperMapping');
+Route::post('create','StudentSubjectPaperMapping@store');
+Route::put('{id}/edit','StudentSubjectPaperMapping@update');
+Route::DELETE('{id}/delete','StudentSubjectPaperMapping@destroy');
+
+//For subject_paper_details
+Route::resource('subjectpaperdetails', 'SubjectPaperDetails');
+Route::post('create','SubjectPaperDetails@store');
+Route::put('{id}/edit','SubjectPaperDetails@update');
+Route::DELETE('{id}/delete','SubjectPaperDetails@destroy');
+
+//For user
+Route::resource('user', 'UserController');
+Route::post('create','UserController@store');
+Route::put('{id}/edit','UserController@update');
+Route::DELETE('{id}/delete','UserController@destroy');
+
