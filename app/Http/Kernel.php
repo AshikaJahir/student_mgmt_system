@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
         'Register' => \App\Http\Middleware\RegisterMiddleware::class,//for register screen
         'Login' => \App\Http\Middleware\LoginMiddleware::class,//for login screen
         'ForgotPwd' => \App\Http\Middleware\ForgotPwdMiddleware::class,//for forgot password page
+        //Before modification of db(that is )
         'Student' => \App\Http\Middleware\Student\Admission\StudentMiddleware::class,//for students basic info for crud
         'TransportData' => \App\Http\Middleware\Student\Admission\TransportDataMiddleware::class,//for students transport info for crud
         'FeeData' => \App\Http\Middleware\Student\Admission\FeeDataMiddleware::class,//for students fee info for crud
@@ -72,6 +73,13 @@ class Kernel extends HttpKernel
         'SubjectDetail' => \App\Http\Middleware\Teacher\ClassDetails\SubjectDetailMiddleware::class,//for teacher class info for crud
         'Admin' => \App\Http\Middleware\Admin\AdminMiddleware::class,//for admin basic info for crud
         'Parent' => \App\Http\Middleware\Parent\ParentMiddleware::class,//for parent basic info for crud
+        //After modification of DB
+        'CourseDetails' => \App\Http\Middleware\CourseDetailsMiddleware::class,//for course details table
+        'StudentAttendance' => \App\Http\Middleware\StudentAttendanceMiddleware::class,//for student_attendance table
+        'StudentDetails' => \App\Http\Middleware\StudentDetailsMiddleware::class,//for student_details table
+        'StudentSubject' => \App\Http\Middleware\StudentSubjectPaperMapping::class,//for student_subject_paper_mapping table
+        'SubjectPaper' => \App\Http\Middleware\SubjectPaperDetails::class,//for subject_paper_details table
+        'User' => \App\Http\Middleware\UserMiddleware::class,//for user table
         
     ];
 }
