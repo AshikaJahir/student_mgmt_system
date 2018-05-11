@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\StudentSubjectPaperMapping;
 
-class StudentSubjectPaperMapping extends Controller
+class StudentSubjectPaperMappingController extends Controller
 {
     /**
      * Display a listing of the resource.

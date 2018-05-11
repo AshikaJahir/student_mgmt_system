@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\SubjectPaperDetails;
 
-class SubjectPaperDetails extends Controller
+class SubjectPaperDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +16,7 @@ class SubjectPaperDetails extends Controller
     {
         $list = SubjectPaperDetails::all();
         return view('subjectpaperdetails.index')->with('list',$list);
+        
     }
 
     /**

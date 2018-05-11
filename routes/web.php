@@ -12,13 +12,13 @@
 */
 //A.NAVIGATION TO VIEWS 
 //A1. Page to be displayed when the user enters the application
-Route::get('/', function () {
-    return view('index');
-});
-
 /*Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('email', function () {
     return view('adminator.email');
 });
@@ -192,13 +192,13 @@ Route::put('studentattendance/{id}/edit','StudentAttendanceController@update')->
 Route::DELETE('studentattendance/{id}/delete','StudentAttendanceController@destroy');
 
 //For student_subject_paper_mapping
-Route::resource('studentsubjectpaper', 'StudentSubjectPaperMapping');
+Route::resource('studentsubjectpaper', 'StudentSubjectPaperMappingController');
 Route::post('studentsubjectpaper/create','StudentSubjectPaperMapping@store')->middleware('StudentSubject');
 Route::put('studentsubjectpaper/{id}/edit','StudentSubjectPaperMapping@update')->middleware('StudentSubject');
 Route::DELETE('studentsubjectpaper/{id}/delete','StudentSubjectPaperMapping@destroy');
 
 //For subject_paper_details
-Route::resource('subjectpaperdetails', 'SubjectPaperDetails');
+Route::resource('subjectpaperdetails', 'SubjectPaperDetailsController');
 Route::post('subjectpaperdetails/create','SubjectPaperDetails@store')->middleware('SubjectPaper');
 Route::put('subjectpaperdetails/{id}/edit','SubjectPaperDetails@update')->middleware('SubjectPaper');
 Route::DELETE('subjectpaperdetails/{id}/delete','SubjectPaperDetails@destroy');
@@ -209,3 +209,5 @@ Route::post('user/create','UserController@store')->middleware('User');
 Route::put('user/{id}/edit','UserController@update')->middleware('User');
 Route::DELETE('user/{id}/delete','UserController@destroy');
 
+//For joint queries and manuplation of send data
+Route::get('activity','ActivityController@join');
