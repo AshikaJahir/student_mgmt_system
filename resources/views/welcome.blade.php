@@ -66,27 +66,25 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+           
 
             <div class="content">
                 <div class="title m-b-md">   
-                    Welcome to Student Management System..!!   
+                  Student Management System..!!   
                     
                 </div>
                 
                 
                 <div class="links">
-                    <a href="login">Login</a>
-                    <a href="register">Register</a>
+                     
+                    <a href="{{url('/coursedetails')}}">Course Details</a>
+                    <a href="{{url('/studentdetails')}}">Student Details</a>
+                    <a href="{{url('/user')}}">User Details</a>
+                    <a href="{{url('/studentsubjectpaper')}}">Student Subject Paper Details</a>
+                    <a href="{{url('/subjectpaperdetails')}}">Subject Paper Mapping Details</a>
+                     <a href="{{url('/studentattendance')}}">Student Attendance</a>
+                   
+                    
                    <!--<a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
