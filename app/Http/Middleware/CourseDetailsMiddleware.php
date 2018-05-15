@@ -16,9 +16,9 @@ class CourseDetailsMiddleware
     public function handle($request, Closure $next)
     {
         $request->validate([
-        'course_name' => 'required|max:20',
-        'course_code' => 'required|max:5',
-        'description' => 'required|max:40',
+        'course_name' => 'required',
+        'course_code' => 'required',
+        'description' => 'required',
         ]);
         
         return $next($request);

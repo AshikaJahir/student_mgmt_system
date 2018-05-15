@@ -42,10 +42,10 @@ class StudentDetailsController extends Controller
         $studentDetail->contact_info = $request->contact;
         $studentDetail->year_of_joining = $request->yearOfJoin;
         $studentDetail->year_of_passout = $request->yearOfPassout;
-         \date_default_timezone_set('Asia/Kolkata');
-        $studentDetail->created_time_stamp = date("Y-m-d H:i:s");
-        $studentDetail->last_updated_stamp = $studentDetail->created_time_stamp;
-        
+//         \date_default_timezone_set('Asia/Kolkata');
+//        $studentDetail->created_time_stamp = date("Y-m-d H:i:s");
+//        $studentDetail->last_updated_stamp = $studentDetail->created_time_stamp;
+//        
         $studentDetail->save();
         
         return redirect('studentdetails')->with('Success','Student Detail Inserted');
@@ -60,7 +60,7 @@ class StudentDetailsController extends Controller
     public function show($id)
     {
         $studentList = StudentDetails::find($id);
-        return view('studentdetails.show')->with('studentList',$studentList);
+        return view('studentdetails.view')->with('studentList',$studentList);
     }
 
     /**
@@ -91,9 +91,9 @@ class StudentDetailsController extends Controller
         $studentDetail->contact_info = $request->contact;
         $studentDetail->year_of_joining = $request->yearOfJoin;
         $studentDetail->year_of_passout = $request->yearOfPassout;
-         \date_default_timezone_set('Asia/Kolkata');
-        $studentDetail->last_updated_stamp = date("Y-m-d H:i:s");
-        
+//         \date_default_timezone_set('Asia/Kolkata');
+//        $studentDetail->last_updated_stamp = date("Y-m-d H:i:s");
+//        
         $studentDetail->save();
         
         return redirect('studentdetails')->with('Success','Student Detail Updated');

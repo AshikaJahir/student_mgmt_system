@@ -40,7 +40,7 @@ class SubjectPaperDetailsController extends Controller
         $detail = new SubjectPaperDetails;            
         $detail->name = $request->name;
         $detail->paper_code = $request->paperCode;
-        $detail->descriprion = $request->description;
+        $detail->description = $request->description;
         $detail->semester = $request->semester;
         $detail->credit_score = $request->credit;
         $detail->course_id = $request->courseId;
@@ -62,7 +62,7 @@ class SubjectPaperDetailsController extends Controller
     public function show($id)
     {
         $list = SubjectPaperDetails::find($id);
-        return view('subjectpaperdetails.show')->with('list',$list);
+        return view('subjectpaperdetails.view')->with('list',$list);
     }
 
     /**
@@ -91,7 +91,7 @@ class SubjectPaperDetailsController extends Controller
         
         $detail->name = $request->name;
         $detail->paper_code = $request->paperCode;
-        $detail->descriprion = $request->description;
+        $detail->description = $request->description;
         $detail->semester = $request->semester;
         $detail->credit_score = $request->credit;
         $detail->course_id = $request->courseId;

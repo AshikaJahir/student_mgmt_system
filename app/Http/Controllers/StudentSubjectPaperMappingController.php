@@ -37,8 +37,8 @@ class StudentSubjectPaperMappingController extends Controller
     public function store(Request $request)
     {
         $detail = new StudentSubjectPaperMapping;
-        $detail->student_id = $request->studentId;
-        $detail->paper_id = $request->paperId;
+//        $detail->student_id = $request->studentId;
+//        $detail->paper_id = $request->paperId;
         $detail->type = $request->type;
         $detail->marks_attained = $request->marks;
         $detail->semester = $request->semester;
@@ -60,7 +60,7 @@ class StudentSubjectPaperMappingController extends Controller
     public function show($id)
     {
         $list = StudentSubjectPaperMapping::find($id);
-        return view('studentsubjectpaper.show')->with('list',$list);
+        return view('studentsubjectpaper.view')->with('list',$list);
     }
 
     /**
@@ -87,8 +87,8 @@ class StudentSubjectPaperMappingController extends Controller
         
         $detail = StudentSubjectPaperMapping::find($id);
         
-        $detail->student_id = $request->studentId;
-        $detail->paper_id = $request->paperId;
+//        $detail->student_id = $request->studentId;
+//        $detail->paper_id = $request->paperId;
         $detail->type = $request->type;
         $detail->marks_attained = $request->marks;
         $detail->semester = $request->semester;

@@ -37,7 +37,7 @@ class StudentAttendanceController extends Controller
     public function store(Request $request)
     {
         $attendance = new StudentAttendance;
-        $attendance->studentid = $request->studentid;
+//        $attendance->student_id = $request->student_id;
         $attendance->semester = $request->semester;
         $attendance->date = $request->date;
         $attendance->hour1 = $request->hour1;
@@ -65,7 +65,7 @@ class StudentAttendanceController extends Controller
     public function show($id)
     {
         $attendanceList = StudentAttendance::find($id);
-        return view('studentattendance.show')->with('atttendanceList',$attendanceList);
+        return view('studentattendance.view')->with('atttendanceList',$attendanceList);
     }
 
     /**

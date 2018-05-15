@@ -26,7 +26,7 @@ class UserMiddleware
         'addressLine1' => 'required',
         'addressLine2' => 'required',
         'pincode' => 'required',
-        'accessMappingId' => 'required',
+//        'accessMappingId' => 'required',
         ]);
         
         return $next($request);

@@ -19,8 +19,8 @@ class StudentDetailsMiddleware
         'courseid' => 'required',
         'userid' => 'required',
         'contact' => 'required|max:10',
-        'yearOfJoin' => 'required|max:4',
-        'yearOfPassout' => 'required|max:4',       
+        'yearOfJoin' => 'required',
+        'yearOfPassout' => 'required',       
         ]);
         
         return $next($request);
