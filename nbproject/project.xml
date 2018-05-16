@@ -11,7 +11,10 @@
             <word>csrf</word>
             <word>endforeach</word>
             <word>endif</word>
+            <word>examdetails</word>
             <word>foreach</word>
+            <word>markdetails</word>
+            <word>marksdetail</word>
             <word>parentList</word>
             <word>studentList</word>
             <word>teacherLidt</word>
